@@ -38,6 +38,10 @@ if (typeof window.WimsMoodleElements === 'undefined') {
 
       const iMoodle = window.WimsMoodleElements.length
 
+      if (iMoodle > 0) {
+        alert('Attention, il y a déjà une intégration de Wims sur la page')
+      }
+
       let questionDiv = this.parentNode
       // On remonte de parent en parent depuis la balise script jusqu'à trouver le div avec le numero de la question en id
       while (questionDiv !== null) { // s'arrêtera lorsqu'il n'y aura plus de parents
