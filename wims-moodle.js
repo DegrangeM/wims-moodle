@@ -86,13 +86,6 @@ if (typeof window.WimsMoodleElements === 'undefined') {
             this.requestFullscreen();
           } else {
             document.exitFullscreen();
-            // Force recize event to fix strange bug
-            setTimeout(() => {
-              iframe.setAttribute('width', '99%');
-              setTimeout(() => { iframe.setAttribute('width', '100%'); }, 100);
-            }, 100);
-
-
           }
         });
         shadow.appendChild(iframe)
