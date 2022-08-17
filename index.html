@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intégration Labomep / Moodle</title>
+</head>
+
+<body>
+    <div style="opacity:0.35;">
+    URL du script <code>labomep-moodle.js</code> :<br />
+    <input type="url" id="script_url" value="https://degrangem.github.io/labomep-moodle/labomep-moodle.js"
+        size="100" /><br /><br />
+    </div>
+    URL de la page "Plus d'information" :<br />
+    <input type="text" id="url_information" placeholder="https://bibliotheque.sesamath.net/ressource/decrire/XXXXXXX"
+        size="100" /><br /><br />
+    <button id="download">Obtenir le fichier GIFT à importer dans la banque de question Moodle</button>
+    <script>
+        document.getElementById('download').addEventListener('click', function () {
+            try {
+                const script_url = document.getElementById('script_url').value;
+                const url_information = new URL(document.getElementById('url_information').value);
+                const exo_id = url_information.pathname.match(/\/(?:ressource\/decrire|public\/voir)\/([0-9a-f]+)/)[1];
+                fetch(url_information.origin + '/api/public/' + exo_id).then(r => r.json()).then(r => {
+                    const download_link = document.createElement('a');
+                    const GIFT = `:: Labomep - ${r?.data?.titre} ::
+<scr`+ `ipt src\\="${script_url}" type\\="module"></scr` + `ipt>
+<labomep-moodle identifiant\\="${exo_id}" ${url_information.origin !== 'https://bibliotheque.sesamath.net' ? 'serveur\\="' + url_information.origin + '"' : ''}/>
+{
+=%100%100=%90%90=%80%80=%70%70=%60%60=%50%50=%40%40=%30%30=%20%20=%10%10=%0%0
+}`
+                    download_link.href = 'data:text/plain;charset=UTF-8,' + encodeURI(GIFT);
+                    download_link.download = 'labomep-moodle-' + exo_id + '.gift.txt';
+                    download_link.click();
+                    // window.open(download_link.href)
+                }).catch(e => alert('Erreur : ' + e));
+            }
+            catch (e) {
+                alert('Erreur : ' + e);
+            }
+        });
+    </script>
+</body>
+
+</html>
