@@ -60,7 +60,7 @@ if (typeof window.WimsMoodleElements === 'undefined') {
 
       iframe.setAttribute('width', '100%')
       iframe.style.height = '80vh'
-      iframe.setAttribute('src', SERVEUR_URL + 'ressource/voir/' + this.getAttribute('identifiant') + '?loadedMessageAction=sesalab::ressourceLoaded&resultatMessageAction=sesalab::result::' + iMoodle)
+      iframe.setAttribute('src', PAGE_URL)
       iframe.setAttribute('frameBorder', '0')
       iframe.setAttribute('allow', 'fullscreen')
 
