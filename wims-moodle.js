@@ -1,13 +1,13 @@
-if (typeof window.LabomepMoodleElements === 'undefined') {
+if (typeof window.WimsMoodleElements === 'undefined') {
   // Normalement ce script ne devrait être chargé qu'une unique fois car appelé en module
   // On vérifie tout de même au cas où que le fichier ne soit pas appelé en module
-  window.LabomepMoodleElements = []
+  window.WimsMoodleElements = []
 
   window.addEventListener('message', (event) => {
     if (event.data?.action.startsWith('sesalab::result::')) {
       const iMoodle = parseInt(event.data.action.substring('sesalab::result::'.length))
-      if (typeof window.LabomepMoodleElements[iMoodle] !== 'undefined') {
-        const iframe = window.LabomepMoodleElements[iMoodle]
+      if (typeof window.WimsMoodleElements[iMoodle] !== 'undefined') {
+        const iframe = window.WimsMoodleElements[iMoodle]
         if (event.data.result.score !== undefined && event.data.result.fin !== false) {
           const moodleScore = Math.round(event.data.result.score * 10) * 10
           iframe.parentNode.parentNode.querySelector('[name$="_answer"]').value = moodleScore
@@ -18,10 +18,10 @@ if (typeof window.LabomepMoodleElements === 'undefined') {
   })
 
   const style = document.createElement('style')
-  style.innerHTML = '.labomep-question-type .form-inline, .labomep-question-type .im-controls, .labomep-question-type .rightanswer { display: none; }'
+  style.innerHTML = '.wims-question-type .form-inline, .wims-question-type .im-controls, .wims-question-type .rightanswer { display: none; }'
   document.head.appendChild(style)
 
-  class LabomepMoodle extends HTMLElement {
+  class WimsMoodle extends HTMLElement {
     connectedCallback() {
       let SERVEUR_URL
       try {
@@ -36,7 +36,7 @@ if (typeof window.LabomepMoodleElements === 'undefined') {
 
       const shadow = this.attachShadow({ mode: 'open' }) // this.shadowRoot
 
-      const iMoodle = window.LabomepMoodleElements.length
+      const iMoodle = window.WimsMoodleElements.length
 
       let questionDiv = this.parentNode
       // On remonte de parent en parent depuis la balise script jusqu'à trouver le div avec le numero de la question en id
@@ -52,11 +52,11 @@ if (typeof window.LabomepMoodleElements === 'undefined') {
         return
       }
 
-      questionDiv.classList.add('labomep-question-type')
+      questionDiv.classList.add('wims-question-type')
 
       const iframe = document.createElement('iframe')
       this.iframe = iframe
-      window.LabomepMoodleElements.push(this)
+      window.WimsMoodleElements.push(this)
 
       iframe.setAttribute('width', '100%')
       iframe.style.height = '80vh'
@@ -105,5 +105,5 @@ if (typeof window.LabomepMoodleElements === 'undefined') {
   }
 
   // Define the new element
-  customElements.define('labomep-moodle', LabomepMoodle)
+  customElements.define('wims-moodle', WimsMoodle)
 }
