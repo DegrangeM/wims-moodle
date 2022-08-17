@@ -4,12 +4,12 @@ if (typeof window.WimsMoodleElements === 'undefined') {
   window.WimsMoodleElements = []
 
   window.addEventListener('message', (event) => {
-    if (event.data?.action.startsWith('sesalab::result::')) {
-      const iMoodle = parseInt(event.data.action.substring('sesalab::result::'.length))
+    if (event.data?.action == 'wims::result') {
+      const iMoodle = 0
       if (typeof window.WimsMoodleElements[iMoodle] !== 'undefined') {
         const iframe = window.WimsMoodleElements[iMoodle]
-        if (event.data.result.score !== undefined && event.data.result.fin !== false) {
-          const moodleScore = Math.round(event.data.result.score * 10) * 10
+        if (event.data.result.score !== undefined) {
+          const moodleScore = Math.round(event.data.result.score) * 10
           iframe.parentNode.parentNode.querySelector('[name$="_answer"]').value = moodleScore
           iframe.parentNode.parentNode.querySelector('[name$="_-submit"]')?.click()
         }
