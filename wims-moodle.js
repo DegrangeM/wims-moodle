@@ -23,15 +23,15 @@ if (typeof window.WimsMoodleElements === 'undefined') {
 
   class WimsMoodle extends HTMLElement {
     connectedCallback() {
-      let SERVEUR_URL
+      let PAGE_URL
       try {
-        SERVEUR_URL = new URL(this.getAttribute('serveur') || 'https://bibliotheque.sesamath.net')
-        if (SERVEUR_URL.protocol !== 'http:' && SERVEUR_URL.protocol !== 'https:') {
+        PAGE_URL = new URL(this.getAttribute('url'))
+        if (PAGE_URL.protocol !== 'http:' && PAGE_URL.protocol !== 'https:') {
           throw new Error('Le serveur doit avoir un protocol en http ou https')
         }
-        SERVEUR_URL = SERVEUR_URL.href
+        PAGE_URL = PAGE_URL.href
       } catch (e) {
-        SERVEUR_URL = 'data:text,' + e
+        PAGE_URL = 'data:text,' + e
       }
 
       const shadow = this.attachShadow({ mode: 'open' }) // this.shadowRoot
