@@ -27,7 +27,7 @@
             try {
                 const giftEscape = s => s.replace(/[~=#{}:]/g, '\\$&') // échappement des caratères spéciaux pour les GIFT
                 const script_url = document.getElementById('script_url').value;
-                const url_exo = new URL(document.getElementById('url_exo').value);
+                const url_exo = new URL(document.getElementById('url_exo').value).href;
                 const titre_exo = document.getElementById('titre_exo').value;
 
                 const download_link = document.createElement('a');
