@@ -11,6 +11,7 @@ if (typeof window.WimsMoodleElements === 'undefined') {
         if (typeof event.data.score !== 'undefined') {
           const moodleScore = Math.round(event.data.score) * 10
           iframe.parentNode.parentNode.querySelector('[name$="_answer"]').value = moodleScore
+          iframe.iframe.addEventListener('unload', iframe.afficherPopupDejaFait);
           iframe.parentNode.parentNode.querySelector('[name$="_-submit"]')?.click()
         }
       }
@@ -64,14 +65,18 @@ if (typeof window.WimsMoodleElements === 'undefined') {
       iframe.setAttribute('frameBorder', '0')
       iframe.setAttribute('allow', 'fullscreen')
 
-      if (!questionDiv.classList.contains('notyetanswered')) {
-        iframe.style.pointerEvents = 'none';
-        iframe.style.filter = 'blur(5px)';
+      this.afficherPopupDejaFait = () => {
+        iframe.style.pointerEvents = 'none'
+        iframe.style.filter = 'blur(5px)'
         const successMessage = document.createElement('div');
         successMessage.textContent = 'Vous avez déjà effectué cet exercice';
         successMessage.setAttribute('style', 'position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);background-color: lightgreen;padding: 10px;border: 1px solid green;color: green;');
         shadow.appendChild(iframe)
         shadow.appendChild(successMessage)
+      }
+
+      if (!questionDiv.classList.contains('notyetanswered')) {
+        this.afficherPopupDejaFait()
       } else {
         if (iMoodle > 0) {
           alert('Attention, il y a déjà une intégration de Wims sur la page')
