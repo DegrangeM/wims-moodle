@@ -67,7 +67,7 @@ if (typeof window.WimsMoodleElements === 'undefined') {
       iframe.setAttribute('frameBorder', '0')
       iframe.setAttribute('allow', 'fullscreen')
 
-      iframe.addEventListener('onload', function(){iframe.setAttribute('height','999px')});
+      iframe.addEventListener('onload', ()=>{iframe.setAttribute('height','999px')}, true);
 
       this.afficherPopupDejaFait = () => {
         console.log('sdfdsfdsf')
