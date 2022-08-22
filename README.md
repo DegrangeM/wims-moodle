@@ -42,4 +42,5 @@ Il est conseillé de configurer le test sur "Feedback à postériori". Dans le c
 
 ## Remarque importante sur la triche
 
-Les élèves ont la possibilité de tricher en actualisant la page pour obtenir une nouvelle serie d'exercice. Les élèves doués en informatique ont aussi la possibilité de tricher en se donnant tous les points à l'exercice sans l'effectuer.
+Les élèves ont la possibilité de tricher en actualisant la page pour obtenir une nouvelle serie d'exercice, y compris après avoir obtenu un score.
+Les élèves doués en informatique ont aussi la possibilité de tricher en se donnant tous les points à l'exercice sans l'effectuer.
