@@ -1,12 +1,7 @@
-# _Répertoire archivé, voir : https://aide.labomep.sesamath.net/doku.php?id=tutoriels:moodle:start_
+# Wims-Moodle
 
-# Labomep-Moodle (Sesathèque)
- 
-_Remarque : cet outil n'est pas un outil officiel_
- 
-Labomep-Moodle est une passerelle pour inclure des exercices labomep (provenant de la sesathèque) directement sur moodle dans un Test (quiz).
-Cela ne permet pas de profiter de toutes les fonctionnaltiés offerte par LaboMep, mais offre la possibilité d'inclure des exos labomep parmi d'autres questions Moodle (et pourquoi pas [Mathalea](https://coopmaths.fr/mathalea.html?v=moodle&z=1)). Cela evite aussi de rajouter une plateforme supplémentaire aux élèves.
-Les élèves n'ont pas besoin de compte labomep mais l'enseignant lui à besoin d'un compte pour des raisons pratiques.
+Wims-Moodle est une passerelle pour inclure des exercices Wims directement sur moodle dans un Test (quiz).
+Les élèves n'ont pas besoin d'avoir un compte Wims et les résultats obtenus sont directement remonté en tant que résultat à la question du quiz.
 
 ![image](https://user-images.githubusercontent.com/53106394/176482767-e8a2debd-9f5e-470a-9ef0-eacded540fe0.png)
 
@@ -58,13 +53,9 @@ Il ne vous reste plus qu'à cocher la question précédemment importée, puis à
 
 ## Quelques remarques sur la configuration du test
 
+Il faut obligatoirement ne pas afficher plus d'un seul exercice wims à la fois dans le test moodle, il est donc conseillé de régler le test sur "1 question par page".
+
 Il est conseillé de configurer le test sur "Feedback à postériori". Dans le cas contraire la validation d'un exercice entraînera un rechargement de la page qui fera perdre le travail en cours sur un exercice de la même page.
-
-Une autre possibilité est de configurer l'exercice sur "Feedback immédiat" mais de configurer le test pour n'afficher qu'une seule question par page.
-
-## Astuce
-
-Pour éviter d'encombrer votre banque de question, vous pouvez créer une catégorie et lors de l'importation choisir la catégorie dans laquelle ajouter les questions.
 
 ## Remarque importante sur la triche
 
