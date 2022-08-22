@@ -11,6 +11,7 @@ if (typeof window.WimsMoodleElements === 'undefined') {
         if (typeof event.data.score !== 'undefined') {
           const moodleScore = Math.round(event.data.score) * 10
           iframe.parentNode.parentNode.querySelector('[name$="_answer"]').value = moodleScore
+          iframe.iframe.addEventListener('load', function(){console.log('a');alert('a');});
           iframe.parentNode.parentNode.querySelector('[name$="_-submit"]')?.click()
         }
       }
@@ -65,6 +66,7 @@ if (typeof window.WimsMoodleElements === 'undefined') {
       iframe.setAttribute('allow', 'fullscreen')
 
       this.afficherPopupDejaFait = () => {
+        console.log('sdfdsfdsf')
         iframe.style.pointerEvents = 'none'
         iframe.style.filter = 'blur(5px)'
         const successMessage = document.createElement('div');
