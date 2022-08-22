@@ -53,13 +53,9 @@ Il ne vous reste plus qu'à cocher la question précédemment importée, puis à
 
 ## Quelques remarques sur la configuration du test
 
+Il faut obligatoirement ne pas afficher plus d'un seul exercice wims à la fois dans le test moodle, il est donc conseillé de régler le test sur "1 question par page".
+
 Il est conseillé de configurer le test sur "Feedback à postériori". Dans le cas contraire la validation d'un exercice entraînera un rechargement de la page qui fera perdre le travail en cours sur un exercice de la même page.
-
-Une autre possibilité est de configurer l'exercice sur "Feedback immédiat" mais de configurer le test pour n'afficher qu'une seule question par page.
-
-## Astuce
-
-Pour éviter d'encombrer votre banque de question, vous pouvez créer une catégorie et lors de l'importation choisir la catégorie dans laquelle ajouter les questions.
 
 ## Remarque importante sur la triche
 
