@@ -3,7 +3,7 @@
 Wims-Moodle est une passerelle pour inclure des exercices Wims directement sur moodle dans un Test (quiz).
 Les élèves n'ont pas besoin d'avoir un compte Wims et les résultats obtenus sont directement remonté en tant que résultat à la question du quiz.
 
-![image](https://user-images.githubusercontent.com/53106394/176482767-e8a2debd-9f5e-470a-9ef0-eacded540fe0.png)
+![image](https://user-images.githubusercontent.com/53106394/185902018-49f9a38a-6e9e-480a-9736-d563f76778ea.png)
 
 ## Choix de l'exercice
 
