@@ -11,7 +11,7 @@ if (typeof window.WimsMoodleElements === 'undefined') {
         if (typeof event.data.score !== 'undefined') {
           const moodleScore = Math.round(event.data.score) * 10
           iframe.parentNode.parentNode.querySelector('[name$="_answer"]').value = moodleScore
-          iframe.iframe.addEventListener('unload', iframe.afficherPopupDejaFait);
+          iframe.iframe.addEventListener('beforeunload', iframe.afficherPopupDejaFait);
           iframe.parentNode.parentNode.querySelector('[name$="_-submit"]')?.click()
         }
       }
