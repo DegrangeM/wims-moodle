@@ -38,10 +38,6 @@ if (typeof window.WimsMoodleElements === 'undefined') {
 
       const iMoodle = window.WimsMoodleElements.length
 
-      if (iMoodle > 0) {
-        alert('Attention, il y a déjà une intégration de Wims sur la page')
-      }
-
       let questionDiv = this.parentNode
       // On remonte de parent en parent depuis la balise script jusqu'à trouver le div avec le numero de la question en id
       while (questionDiv !== null) { // s'arrêtera lorsqu'il n'y aura plus de parents
@@ -77,6 +73,9 @@ if (typeof window.WimsMoodleElements === 'undefined') {
         shadow.appendChild(iframe)
         shadow.appendChild(successMessage)
       } else {
+        if (iMoodle > 0) {
+          alert('Attention, il y a déjà une intégration de Wims sur la page')
+        }
         const fullscreenIcon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVRYw+3XwQkAIAzF0Hz337kuIEgPomByFeyDXjRA0Sub89Z9g8sJyGJnOTyzXIEAAU8BzMx8DwgQICD+Db8HTFAkCCnkhrVLAAAAAElFTkSuQmCC';
         const fullscreenElement = document.createElement('img');
         fullscreenElement.setAttribute('src', fullscreenIcon);
