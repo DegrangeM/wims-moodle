@@ -77,7 +77,7 @@ if (typeof window.WimsMoodleElements === 'undefined') {
         shadow.appendChild(iframe)
         shadow.appendChild(successMessage)
       } else {
-        const fullscreenIcon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAB2HAAAdhwGP5fFlAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAEtJREFUWIXtl0EKACAIBNv+/+ftbqBIRBAzV00HhSjZ9mggSVm8W292km+AgOLOqh2fEvs9nwACCCAAAMB7AAEEENjugfIAf8PfBBYFhyAdDEK+jwAAAABJRU5ErkJggg==';
+        const fullscreenIcon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQklEQVRYw+3XwQkAIAzF0Hz337kuIEgPomByFeyDXjRA0Sub89Z9g8sJyGJnOTyzXIEAAU8BzMx8DwgQICD+Db8HTFAkCCnkhrVLAAAAAElFTkSuQmCC';
         const fullscreenElement = document.createElement('img');
         fullscreenElement.setAttribute('src', fullscreenIcon);
         fullscreenElement.setAttribute('style', 'position: absolute;top: 25px;right: 45px;cursor: pointer;');
