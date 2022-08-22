@@ -8,8 +8,8 @@ if (typeof window.WimsMoodleElements === 'undefined') {
       const iMoodle = 0
       if (typeof window.WimsMoodleElements[iMoodle] !== 'undefined') {
         const iframe = window.WimsMoodleElements[iMoodle]
-        if (event.data.result.score !== undefined) {
-          const moodleScore = Math.round(event.data.result.score) * 10
+        if (typeof event.data.score !== 'undefined') {
+          const moodleScore = Math.round(event.data.score) * 10
           iframe.parentNode.parentNode.querySelector('[name$="_answer"]').value = moodleScore
           iframe.parentNode.parentNode.querySelector('[name$="_-submit"]')?.click()
         }
