@@ -69,7 +69,6 @@ if (typeof window.WimsMoodleElements === 'undefined') {
       iframe.setAttribute('allow', 'fullscreen')
 
       this.afficherPopupDejaFait = () => {
-        console.log('sdfdsfdsf')
         iframe.style.pointerEvents = 'none'
         iframe.style.filter = 'blur(5px)'
         const successMessage = document.createElement('div');
