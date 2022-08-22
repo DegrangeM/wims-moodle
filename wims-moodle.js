@@ -10,9 +10,12 @@ if (typeof window.WimsMoodleElements === 'undefined') {
         const iframe = window.WimsMoodleElements[iMoodle]
         if (typeof event.data.score !== 'undefined') {
           const moodleScore = Math.round(event.data.score) * 10
-          iframe.parentNode.parentNode.querySelector('[name$="_answer"]').value = moodleScore
-          iframe.iframe.addEventListener('load', function(){console.log('a');alert('a');});
-          iframe.parentNode.parentNode.querySelector('[name$="_-submit"]')?.click()
+          if (iframe.parentNode.parentNode.querySelector('[name$="_answer"]').value != '') {
+            alert('Vous aviez déjà obtenu une note pour cet exercice, la note n\'a donc pas été mise à jour.');
+          } else {
+            iframe.parentNode.parentNode.querySelector('[name$="_answer"]').value = moodleScore
+            iframe.parentNode.parentNode.querySelector('[name$="_-submit"]')?.click()
+          }
         }
       }
     }
