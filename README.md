@@ -1,3 +1,5 @@
+# Ce projet est en cours de développement : le projet a été développé et est fonctionnel, mais nécessite une modification dans le code source de wims pour fonctionner. Une demande a été envoyé aux développeurs de wims.
+
 # Wims-Moodle
 
 Wims-Moodle est une passerelle pour inclure des exercices Wims directement sur moodle dans un Test (quiz).
